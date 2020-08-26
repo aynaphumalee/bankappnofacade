@@ -5,8 +5,6 @@
  */
 package bankfacade;
 
-import bankcustomers.BankAccount;
-import bankcustomers.BankCustomer;
 import gencustaccount.AccountIf;
 import gencustaccount.CustomerIf;
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class BankFacade {
      */
     public static void main(String[] args) {
         Facade object = new Facade();
-        AccountIf account;
+        AccountIf account = null;
         
         CustomerIf customer1 = object.getBankCustomer("John");
         System.out.println("Customer and account information");
@@ -35,7 +33,7 @@ public class BankFacade {
         System.out.println("Account Number: " + account.getAccountNumber() + " has " + account.getBalance());
         
         System.out.println("--- Do Deposit Account 12346 ---");
-        object.doDeposit(1000, customer1, 12346);
+        object.doDeposit(1000,customer1,12346);
         System.out.println("Account Number: " + account.getAccountNumber() + " has " + account.getBalance());
          
         System.out.println("--- All Account ---");
@@ -56,8 +54,8 @@ public class BankFacade {
         account = object.getBankAccount(customer2, 12348);
         System.out.println("Account Number: " + account.getAccountNumber() + " has " + account.getBalance());
         
-        System.out.println("--- Do Deposit Account 12347 ---");
-        object.doDeposit(1000, customer2, 12347);
+        System.out.println("--- Do Deposit Account 12348 ---");
+        object.doDeposit(1000, customer2, 12348);
         System.out.println("Account Number: " + account.getAccountNumber() + " has " + account.getBalance());
          
         System.out.println("--- All Account ---");
